@@ -16,6 +16,6 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	w.CurrentByName("Phoenix")
+	w.CurrentByName("Murmansk")
 	fmt.Println(w)
 }
