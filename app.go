@@ -8,3 +8,14 @@ import (
 )
 
 var apiKey = os.Getenv("OWM_API_KEY")
+
+
+func main() {
+	w, err := owm.NewCurrent("F", "ru", apiKey) // fahrenheit (imperial) with Russian output
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	w.CurrentByName("Phoenix")
+	fmt.Println(w)
+}
