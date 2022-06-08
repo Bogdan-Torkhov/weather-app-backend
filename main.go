@@ -11,7 +11,7 @@ var apiKey = os.Getenv("OWM_API_KEY")
 
 
 func main() {
-	w, err := owm.NewCurrent("C", "ru", apiKey) // fahrenheit (imperial) with Russian output
+	w, err := owm.NewCurrent("C", "RU", apiKey) // fahrenheit (imperial) with Russian output
 	if err != nil {
 		log.Fatalln(err)
 	}
