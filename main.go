@@ -16,7 +16,7 @@ func main() {
 		log.Fatalln(err)
 	}
 	log.Println(apiKey)
-	err = w.CurrentByName("Phoenix")
+	err = w.CurrentByName("Murmansk")
 	if err != nil {
 		panic(err)
 	}
