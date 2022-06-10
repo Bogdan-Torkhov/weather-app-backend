@@ -2,9 +2,7 @@ module go-weather-app
 
 go 1.18
 
-<<<<<<< HEAD
 require github.com/Bogdan-Torkhov/go-yaweather-lib v1.0.7
-=======
 require (
 	github.com/briandowns/openweathermap v0.18.0
     github.com/Bogdan-Torkhov/go-yaweather-lib v1.0.3 // indirect
@@ -21,4 +19,3 @@ require (
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
 	golang.org/x/text v0.3.5 // indirect
 )
->>>>>>> refs/remotes/origin/main
