@@ -1,3 +1,5 @@
+github.com/Bogdan-Torkhov/go-yaweather-lib v1.0.3 h1:3+rpBbOGXoQtCn8G1Vr9+jlNLboUnfRgyR7pvZC0Ntg=
+github.com/Bogdan-Torkhov/go-yaweather-lib v1.0.3/go.mod h1:r3nbg3pXtCz1Z2N0nBcHFL38vtYTf0q5FKCyowRVIds=
 github.com/briandowns/openweathermap v0.18.0 h1:JYTtJ4bKjXZRmDTe7huJ5+dZ7CsjPUw10GUzMASkNV8=
 github.com/briandowns/openweathermap v0.18.0/go.mod h1:0GLnknqicWxXnGi1IqoOaZIw+kIe5hkt+YM5WY3j8+0=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

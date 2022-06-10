@@ -5,6 +5,7 @@ go 1.18
 require github.com/briandowns/openweathermap v0.18.0
 
 require (
+	github.com/Bogdan-Torkhov/go-yaweather-lib v1.0.3 // indirect
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
