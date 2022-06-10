@@ -1,4 +1,0 @@
-package weather
-import (
-	
-)
