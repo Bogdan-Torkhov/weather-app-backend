@@ -1,34 +1,33 @@
 package main
 
 import (
-	// "fmt"
 	"log"
-	"go-weather-app/weather"
-
-	// owm "github.com/briandowns/openweathermap"
+	// "go-weather-app/weather"
+	"os"
+	// "fmt"
 )
 
-/*
-const apiKey = "c782b17fcc6669fa73afe6ba68e7f4f9"
+var Logio *log.Logger
 
-func main() {
-	w, err := owm.NewCurrent("C", "ru", apiKey)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	log.Println(apiKey)
-	err = w.CurrentByName("Murmansk")
+func init() {
+	f, err := os.OpenFile("debug.log", os.O_RDWR|os.O_CREATE, 0755)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(w.Weather)
+
+	Logio = log.New(f, "Debug :: ", log.Ldate)
+	
+
+	Logio.Print("Started!")
+
 }
-*/
 
 func main() {
-	w, err := weather.NewWeather()
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Println(w)
+	// w, err := weather.NewWeather()
+	// if err != nil {
+		// log.Fatal(err)
+	// }
+	// newObjJson(w)
+	// Logio.Println(w)
+	start()
 }
