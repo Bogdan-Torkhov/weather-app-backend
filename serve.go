@@ -65,7 +65,7 @@ func (c *server) startServer() {
 	http.HandleFunc("/api", c.apiServe)
 	go func() {
 		wg.Add(1)
-		http.ListenAndServe(":8022", nil)
+		http.ListenAndServe(":80", nil)
 		wg.Done()
 	}()
 	log.Println("Server :: OK")
