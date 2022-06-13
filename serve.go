@@ -18,8 +18,6 @@ type objJson struct {
 
 type iod []objJson
 
-
-
 func newObjJson(we *ya.Weather) string {
 	sl := []objJson{}
 	sl = append(sl, objJson{"temp", we.Fact.Temp})
@@ -39,7 +37,7 @@ type server struct {
 // HELP ME
 
 func enableCors(w http.ResponseWriter) {
-	(w).Header().Set(“Access-Control-Allow-Origin”, “*”)
+	(w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 func newServer() (c *server) {
@@ -57,7 +55,6 @@ func newServer() (c *server) {
 	]`
 	c = new(server)
 	c.apiServe = func(w http.ResponseWriter, _ *http.Request) {
-
 		enableCors(&w)
 		io.WriteString(w, fakeData)
 	}
