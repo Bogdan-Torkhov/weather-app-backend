@@ -1,17 +1,19 @@
 package main
+
 import (
 	"net/http"
 	// "fmt"
-	ya "github.com/Bogdan-Torkhov/go-yaweather-lib/weather"
+	"encoding/json"
+	"io"
 	"log"
 	"sync"
-	"io"
-	"encoding/json"
+
+	ya "github.com/Bogdan-Torkhov/go-yaweather-lib/weather"
 )
 
 type objJson struct {
 	ValueName string `json:"valueName"`
-	Value int `json:"value"`
+	Value     int    `json:"value"`
 }
 
 type iod []objJson
@@ -21,7 +23,9 @@ func newObjJson(we *ya.Weather) string {
 	sl = append(sl, objJson{"temp", we.Fact.Temp})
 	sl = append(sl, objJson{"feelslike", we.Fact.FeelsLike})
 	s, err := json.Marshal(sl)
-	if err != nil { panic(err) }
+	if err != nil {
+		panic(err)
+	}
 	log.Println(string(s))
 	return string(s)
 }
@@ -48,6 +52,9 @@ func newServer() (c *server) {
 	c = new(server)
 	c.apiServe = func(w http.ResponseWriter, _ *http.Request) {
 		// weat, err := weather.NewWeather()
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 		io.WriteString(w, fakeData)
 	}
 	return
@@ -57,9 +64,9 @@ func (c *server) startServer() {
 	var wg sync.WaitGroup
 	http.HandleFunc("/api", c.apiServe)
 	go func() {
-	wg.Add(1)
-	http.ListenAndServe(":80", nil)
-	wg.Done()
+		wg.Add(1)
+		http.ListenAndServe(":80", nil)
+		wg.Done()
 	}()
 	log.Println("Server :: OK")
 	wg.Wait()

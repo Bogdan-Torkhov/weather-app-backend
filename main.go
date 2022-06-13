@@ -10,22 +10,20 @@ import (
 var Logio *log.Logger
 
 func init() {
-	f, err := os.OpenFile("debug.log", os.O_RDWR|os.O_CREATE, 0755)
+	f, err := os.OpenFile("debug.log", os.O_RDWR|os.O_CREATE, 0o755)
 	if err != nil {
 		panic(err)
 	}
 
 	Logio = log.New(f, "Debug :: ", log.Ldate)
-	
 
 	Logio.Print("Started!")
-
 }
 
 func main() {
 	// w, err := weather.NewWeather()
 	// if err != nil {
-		// log.Fatal(err)
+	// log.Fatal(err)
 	// }
 	// newObjJson(w)
 	// Logio.Println(w)
