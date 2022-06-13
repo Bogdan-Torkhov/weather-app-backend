@@ -66,7 +66,10 @@ func (c *server) startServer() {
 	http.HandleFunc("/api", c.apiServe)
 	go func() {
 		wg.Add(1)
-		http.ListenAndServe(":80", nil)
+		err := http.ListenAndServe(":80", nil)
+		if err != nil {
+			panic(err)
+		}
 		wg.Done()
 	}()
 	log.Println("Server :: OK")
