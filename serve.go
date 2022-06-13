@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"io"
 	"log"
-	"sync"
+	// "sync"
 
 	ya "github.com/Bogdan-Torkhov/go-yaweather-lib/weather"
 )
@@ -62,18 +62,18 @@ func newServer() (c *server) {
 }
 
 func (c *server) startServer() {
-	var wg sync.WaitGroup
+	// var wg sync.WaitGroup
 	http.HandleFunc("/api", c.apiServe)
-	go func() {
-		wg.Add(1)
-		err := http.ListenAndServe(":80", nil)
-		if err != nil {
-			panic(err)
-		}
-		wg.Done()
-	}()
+	// go func() {
+	// wg.Add(1)
+	err := http.ListenAndServe(":80", nil)
+	if err != nil {
+		panic(err)
+	}
+	// wg.Done()
+	// }()
 	log.Println("Server :: OK")
-	wg.Wait()
+	// wg.Wait()
 }
 
 func start() {
