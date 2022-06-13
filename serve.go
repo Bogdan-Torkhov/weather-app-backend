@@ -36,8 +36,8 @@ type server struct {
 
 // HELP ME
 
-func enableCors(w http.ResponseWriter) {
-	(w).Header().Set("Access-Control-Allow-Origin", "*")
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 func newServer() (c *server) {
