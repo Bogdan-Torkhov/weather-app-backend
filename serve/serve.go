@@ -1,12 +1,10 @@
-package main
+package serve
 
 import (
-	"net/http"
-	// "fmt"
 	"encoding/json"
 	"io"
 	"log"
-	// "sync"
+	"net/http"
 
 	ya "github.com/Bogdan-Torkhov/go-yaweather-lib/weather"
 )
@@ -34,8 +32,6 @@ type server struct {
 	apiServe func(w http.ResponseWriter, _ *http.Request)
 }
 
-// HELP ME
-
 func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
@@ -62,18 +58,12 @@ func newServer() (c *server) {
 }
 
 func (c *server) startServer() {
-	// var wg sync.WaitGroup
 	http.HandleFunc("/api", c.apiServe)
-	// go func() {
-	// wg.Add(1)
 	err := http.ListenAndServe(":80", nil)
 	if err != nil {
 		panic(err)
 	}
-	// wg.Done()
-	// }()
 	log.Println("Server :: OK")
-	// wg.Wait()
 }
 
 func start() {

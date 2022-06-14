@@ -2,9 +2,8 @@ package main
 
 import (
 	"log"
-	// "go-weather-app/weather"
 	"os"
-	// "fmt"
+	SERVE "https://github.com/Bogdan-Torkhov/weather-app-backend/serve"
 )
 
 var Logio *log.Logger
@@ -21,11 +20,6 @@ func init() {
 }
 
 func main() {
-	// w, err := weather.NewWeather()
-	// if err != nil {
-	// log.Fatal(err)
-	// }
-	// newObjJson(w)
-	// Logio.Println(w)
-	start()
+	//fixed
+	SERVE.start()
 }
