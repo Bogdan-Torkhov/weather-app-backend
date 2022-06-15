@@ -66,7 +66,7 @@ func (c *server) startServer() {
 	log.Println("Server :: OK")
 }
 
-func start() {
+func Start() {
 	c := newServer()
 	c.startServer()
 }

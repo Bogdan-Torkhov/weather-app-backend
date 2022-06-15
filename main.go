@@ -3,7 +3,8 @@ package main
 import (
 	"log"
 	"os"
-	SERVE "https://github.com/Bogdan-Torkhov/weather-app-backend/serve"
+
+	"go-weather-app/serve"
 )
 
 var Logio *log.Logger
@@ -20,6 +21,5 @@ func init() {
 }
 
 func main() {
-	//fixed
-	SERVE.start()
+	serve.Start()
 }
